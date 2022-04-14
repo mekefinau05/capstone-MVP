@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
         <h1>Amelia's Sweet Treats</h1>
         <img
           src={require('../src/images/keke.png')}
-          className='images'
+          className='image'
           alt='chocolate cakes'
         ></img>
       </header>
