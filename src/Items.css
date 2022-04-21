@@ -1,0 +1,38 @@
+.Item {
+    text-align: center;
+    background-color: #282c34; 
+    
+}
+
+.header {
+    color: bisque;
+    padding-top: 6vw;
+}
+
+.subheader {
+    color: bisque;
+}
+
+.Items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.chocolate-cake {
+    margin: 4vmin;
+    width: fit-content;
+    background-color:bisque;
+    align-items: center;
+    border-radius: .5vh;
+}
+
+.choco-cake {
+    margin: 2vmin;
+    max-height: 300px;
+    max-width: 300px;
+}
+
+.button {
+    margin-bottom: 2vh;
+}

@@ -7,7 +7,7 @@ function App() {
       <header className='App-header'>
         <h1>Amelia's Sweet Treats</h1>
         <img
-          src={require('../src/images/keke.png')}
+          src={require('../src/images/fullmenu.png')}
           className='image'
           alt='chocolate cakes'
         ></img>
