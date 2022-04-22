@@ -10,7 +10,7 @@ function App() {
           src={require('../src/images/fullmenu.png')}
           className='image'
           alt='chocolate cakes'
-        ></img>
+        />
       </header>
     </div>
   );
