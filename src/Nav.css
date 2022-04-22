@@ -1,0 +1,12 @@
+.nav {
+    text-align: center;
+    background-color: #282c34;
+    padding-top: 4vh;
+}
+
+.link {
+    color: bisque;
+    text-decoration: none;
+    padding-inline: 10vw;
+    font-weight: bold;
+}
