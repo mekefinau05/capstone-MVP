@@ -3,6 +3,7 @@ import './App.css';
 import Items from './Items';
 import Footer from './Footer';
 import Nav from './Nav';
+import Cart from './Cart';
 import Bgchange from './Bgchange';
 
 function App() {
@@ -12,13 +13,9 @@ function App() {
       <header className='App-header'>
         <h1>Amelia's Sweet Treats</h1>
         <Bgchange />
-        {/* <img
-          src={require('../src/images/fullmenu.png')}
-          className='image'
-          alt='chocolate cakes'
-        /> */}
       </header>
       <Items />
+      <Cart />
       <Footer />
     </div>
   );
