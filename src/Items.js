@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Items.css';
 
-function Items() {
+function Items({ addToCart }) {
   const items = [
     {
       id: 1,
@@ -22,7 +22,7 @@ function Items() {
       name: 'Profiteroles',
       imgSrc: '/images/profiteroles.png',
       description: 'Profiteroles with any flavor of fillings you like',
-      price: '$24.00',
+      price: '$25.40',
     },
     {
       id: 4,
@@ -32,7 +32,6 @@ function Items() {
       price: '$26.80',
     },
   ];
-  const [cart, setCart] = useState([]);
 
   // console.log(cart);
 
@@ -45,7 +44,7 @@ function Items() {
       <section className='Items'>
         {items.map((item) => {
           return (
-            <div className='chocolate-cake'>
+            <div className='chocolate-cake' key={item.id}>
               <h2>{item.name}</h2>
               <img
                 src={item.imgSrc}
@@ -54,10 +53,7 @@ function Items() {
               />
               <p>{item.description}</p>
               <h3 className='price'>{item.price}</h3>
-              <button
-                className='button'
-                onClick={() => setCart([...cart, item])}
-              >
+              <button className='button' onClick={() => addToCart(item)}>
                 Add to Cart
               </button>
             </div>

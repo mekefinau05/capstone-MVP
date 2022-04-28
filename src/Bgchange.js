@@ -5,7 +5,7 @@ function Bgchange() {
   return (
     <div className='bgchange'>
       <img
-        src={require('../src/images/fullmenu.png')}
+        src='/images/fullmenu.png'
         className='background'
         alt='chocolate cakes'
       />
