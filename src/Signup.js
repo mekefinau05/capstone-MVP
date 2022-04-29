@@ -65,21 +65,21 @@ function Signup() {
           type='email'
           name='email'
           onChange={formik.handleChange}
-          value={formik.values.password}
+          value={formik.values.email}
           placeholder='Email Address'
         />
         <input
           type='password'
           name='password'
           onChange={formik.handleChange}
-          value={formik.values.username}
+          value={formik.values.password}
           placeholder='Password'
         />
         <input
           type='password'
           name='confirmPassword'
           onChange={formik.handleChange}
-          value={formik.values.password}
+          value={formik.values.confirmPassword}
           placeholder='Confirm Password'
         />
         <button type='submit' disabled={!formik.isValid}>

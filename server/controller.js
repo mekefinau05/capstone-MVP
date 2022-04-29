@@ -22,7 +22,7 @@ module.exports = {
     } else {
       const salt = bcrypt.genSaltSync(10);
       const passwordHash = bcrypt.hashSync(password, salt);
-      await sequelize.qurey(`
+      await sequelize.query(`
       INSERT INTO users(name, username, email, password)
       VALUES (
         '${name}',

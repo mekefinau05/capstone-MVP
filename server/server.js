@@ -5,7 +5,7 @@ const app = express();
 require('dotenv').config();
 const PORT = process.env.PORT || 4040;
 const ctrl = require('./controller');
-// const sequelize = require('./sequelize');
+const sequelize = require('./sequelize');
 
 //Middleware
 app.use(express.json());
