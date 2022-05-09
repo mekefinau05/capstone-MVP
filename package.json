@@ -2,7 +2,7 @@
   "name": "spec-capstone",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3000",
+  "proxy": "http://localhost:4040",
   "dependencies": {
     "axios": "^0.26.1",
     "bcrypt": "^5.0.1",

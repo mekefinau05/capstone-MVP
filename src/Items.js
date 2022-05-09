@@ -39,7 +39,7 @@ function Items({ addToCart }) {
     <div className='Item'>
       <h1 className='header'>This is our menu.</h1>
       <h3 className='subheader'>
-        We take pride in our homemade products and service to our customer!
+        We take pride in our homemade products and services to our customers!
       </h3>
       <section className='Items'>
         {items.map((item) => {

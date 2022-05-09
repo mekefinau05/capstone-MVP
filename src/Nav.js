@@ -15,7 +15,12 @@ function Nav() {
       |{' '}
       <Link className='link' to='/signup'>
         Signup
-      </Link>{' '}
+      </Link>
+      {/* {' '}
+      |{' '}
+      <Link className='link' to='/cart'>
+        Cart
+      </Link> */}
     </nav>
   );
 }

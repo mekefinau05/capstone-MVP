@@ -60,4 +60,23 @@ module.exports = {
       res.status(401).send('Username is Incorrect');
     }
   },
+  cartOrder: async (req, res) => {
+    const { cart } = req.body;
+    console.log(cart);
+    let order = {
+      id: req.body.id,
+      name: req.body.name,
+      price: req.body.price,
+    };
+    const orders = await sequelize.query(
+      `
+    INSERT INTO orders(id, price) 
+    VALUES(
+      '${id}', 
+      '${price}'
+      )
+    `
+    );
+    res.status(200).send(order);
+  },
 };

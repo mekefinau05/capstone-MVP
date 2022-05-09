@@ -14,8 +14,10 @@ app.use(express.static(path.resolve(__dirname, '../build')));
 
 //Endpoints
 // app.get('./api/item', ctrl.getInfo);
-app.post('./api/signup', ctrl.signUp);
-app.post('./api/login', ctrl.logIn);
+app.post('/api/signup', ctrl.signUp);
+app.post('/api/login', ctrl.logIn);
+
+app.post('/api/cart', ctrl.cartOrder);
 
 //Listen
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

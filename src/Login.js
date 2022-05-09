@@ -1,6 +1,8 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import axios from 'axios';
+import Nav from './Nav';
+import Footer from './Footer';
 
 function Login() {
   const initialValues = {
@@ -9,7 +11,7 @@ function Login() {
   };
   const onSubmit = (values) => {
     axios
-      .post('./api/login', values)
+      .post('/api/login', values)
       .then((res) => {
         console.log(res.data);
       })
@@ -35,6 +37,7 @@ function Login() {
   });
   return (
     <div>
+      <Nav />
       <h2>Login Page</h2>
       <form onSubmit={formik.handleSubmit}>
         <input
@@ -55,6 +58,7 @@ function Login() {
           Submit
         </button>
       </form>
+      <Footer />
     </div>
   );
 }

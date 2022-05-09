@@ -12,7 +12,7 @@ function Signup() {
   };
   const onSubmit = (values) => {
     axios
-      .post('./api/signup', values)
+      .post('/api/signup', values)
       .then((res) => {
         console.log(res.data);
       })
