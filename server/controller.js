@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 
 module.exports = {
   signUp: async (req, res) => {
-    console.log(req.body);
+    const { name, username, email, password } = req.body;
     let user = {
       name: req.body.name,
       username: req.body.username,
@@ -31,7 +31,7 @@ module.exports = {
         '${passwordHash}'
       )`);
       const userInfo = await sequelize.query(`
-      SELECT id, username, name, FROM users
+      SELECT id, username, name FROM users
       WHERE username = '${username}'`);
       res.status(200).send(userInfo);
     }
@@ -52,7 +52,7 @@ module.exports = {
           name: validUser[0][0].name,
           username: validUser[0][0].username,
         };
-        res.status(200).send();
+        res.status(200).send(`Hello, ${object.name}`);
       } else {
         res.status(500).send('Password is Incorrect');
       }

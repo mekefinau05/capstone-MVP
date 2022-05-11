@@ -4,7 +4,7 @@ import axios from 'axios';
 import Nav from './Nav';
 import Footer from './Footer';
 
-function Login() {
+function Login(props) {
   const initialValues = {
     username: '',
     password: '',
@@ -13,12 +13,13 @@ function Login() {
     axios
       .post('/api/login', values)
       .then((res) => {
-        console.log(res.data);
+        alert(res.data);
       })
       .catch((err) => {
-        console.log(err.response.data);
+        console.log(err);
       });
   };
+
   const validate = (values) => {
     const errors = {};
     if (!values.username) {
@@ -35,6 +36,7 @@ function Login() {
     onSubmit,
     validate,
   });
+
   return (
     <div>
       <Nav />
