@@ -1,6 +1,9 @@
 import React from 'react';
+import './Signup.css';
 import { useFormik } from 'formik';
 import axios from 'axios';
+import Nav from './Nav';
+import Footer from './Footer';
 
 function Signup() {
   const initialValues = {
@@ -44,9 +47,10 @@ function Signup() {
     validate,
   });
   return (
-    <div>
-      <h2>Signup</h2>
-      <form onSubmit={formik.handleSubmit}>
+    <div className='Signup'>
+      <Nav />
+      <h2 className='title'>Signup</h2>
+      <form className='form' onSubmit={formik.handleSubmit}>
         <input
           type='text'
           name='name'
@@ -95,6 +99,7 @@ function Signup() {
           <div>{formik.errors.confirmPassword}</div>
         ) : null}
       </div>
+      <Footer />
     </div>
   );
 }

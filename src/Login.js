@@ -1,10 +1,13 @@
 import React from 'react';
+import './Login.css';
 import { useFormik } from 'formik';
 import axios from 'axios';
 import Nav from './Nav';
 import Footer from './Footer';
+import { useNavigate } from 'react-router-dom';
 
 function Login(props) {
+  const navigate = useNavigate();
   const initialValues = {
     username: '',
     password: '',
@@ -13,11 +16,14 @@ function Login(props) {
     axios
       .post('/api/login', values)
       .then((res) => {
-        alert(res.data);
+        localStorage.setItem('userId', res.data.id);
+        localStorage.setItem('userName', res.data.name);
+        alert(`Welcome ${res.data.name}`);
       })
       .catch((err) => {
         console.log(err);
       });
+    navigate('/');
   };
 
   const validate = (values) => {
@@ -38,10 +44,10 @@ function Login(props) {
   });
 
   return (
-    <div>
+    <div className='Login'>
       <Nav />
-      <h2>Login Page</h2>
-      <form onSubmit={formik.handleSubmit}>
+      <h2 className='title'>Login Page</h2>
+      <form className='form' onSubmit={formik.handleSubmit}>
         <input
           type='text'
           name='username'

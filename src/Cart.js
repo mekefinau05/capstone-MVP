@@ -1,18 +1,27 @@
 import React from 'react';
 import axios from 'axios';
 import './Cart.css';
+// import Thanks from './Thanks';
+import { useNavigate } from 'react-router-dom';
 
 function Cart({ cart, removeFromCart }) {
+  const navigate = useNavigate();
   const submitOrder = () => {
+    const userId = localStorage.getItem('userId');
+    const userName = localStorage.getItem('userName');
     axios
-      .post('/api/cart', { cart })
+      .post('/api/cart', { cart, userId, userName })
       .then((res) => {
-        console.log(res.data);
+        alert(
+          `${res.data}, thank you for your order! We will call you when it's ready.`
+        );
       })
       .catch((err) => {
         console.log(err);
       });
+    navigate('/');
   };
+
   return (
     <div className='cart'>
       <h2>This is your Cart!</h2>

@@ -52,9 +52,9 @@ module.exports = {
           name: validUser[0][0].name,
           username: validUser[0][0].username,
         };
-        res.status(200).send(`Hello, ${object.name}`);
+        res.status(200).send({ id: object.id, name: object.name });
       } else {
-        res.status(500).send('Password is Incorrect');
+        res.status(401).send('Password is Incorrect');
       }
     } else {
       res.status(401).send('Username is Incorrect');
@@ -62,21 +62,22 @@ module.exports = {
   },
   cartOrder: async (req, res) => {
     const { cart } = req.body;
-    console.log(cart);
-    let order = {
-      id: req.body.id,
-      name: req.body.name,
-      price: req.body.price,
-    };
+    console.log(req.body);
+    // let order = {
+    //   id: req.body.id,
+    //   name: req.body.name,
+    //   price: req.body.price,
+    // };
     const orders = await sequelize.query(
       `
-    INSERT INTO orders(id, price) 
+    INSERT INTO orders(item_id, total_price, user_id) 
     VALUES(
-      '${id}', 
-      '${price}'
+      ${cart[0].id}, 
+      ${cart[0].price},
+      ${req.body.userId}
       )
     `
     );
-    res.status(200).send(order);
+    res.status(200).send(req.body.userName);
   },
 };

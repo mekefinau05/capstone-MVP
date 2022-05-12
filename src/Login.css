@@ -1,0 +1,30 @@
+.Login {
+    background-color: #282c34;
+    color: bisque;
+    height: 100vh;
+}
+
+.title {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+.form {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 10vh;
+
+}
+
+.form input {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.form button {
+    margin-left: 10px;
+    margin-right: 10px;
+}

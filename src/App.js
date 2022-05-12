@@ -5,14 +5,14 @@ import Footer from './Footer';
 import Nav from './Nav';
 import Cart from './Cart';
 import Bgchange from './Bgchange';
-import Login from './Login';
-import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [cart, setCart] = useState([]);
+  const userId = localStorage.getItem('userId');
 
-  const addToCart = (cart) => {
-    setCart((existingCart) => [...existingCart, cart]);
+  const addToCart = (item) => {
+    setCart((existingCart) => [...existingCart, item]);
+    console.log(cart, userId);
   };
 
   const removeFromCart = (cartToBeRemoved) => {
@@ -21,18 +21,9 @@ function App() {
     );
   };
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const loginUser = () => setIsLoggedIn(!isLoggedIn);
-
   return (
     <div className='App'>
       <Nav />
-      <Routes>
-        <Route
-          path='*'
-          element={isLoggedIn ? <Items /> : <Login logFunction={loginUser} />}
-        />
-      </Routes>
       <header className='App-header'>
         <h1>Amelia's Sweet Treats</h1>
         <Bgchange />
