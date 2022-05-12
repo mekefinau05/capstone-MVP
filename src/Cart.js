@@ -1,11 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import './Cart.css';
-// import Thanks from './Thanks';
-import { useNavigate } from 'react-router-dom';
 
-function Cart({ cart, removeFromCart }) {
-  const navigate = useNavigate();
+function Cart({ cart, removeFromCart, clearCart }) {
   const submitOrder = () => {
     const userId = localStorage.getItem('userId');
     const userName = localStorage.getItem('userName');
@@ -15,11 +12,11 @@ function Cart({ cart, removeFromCart }) {
         alert(
           `${res.data}, thank you for your order! We will call you when it's ready.`
         );
+        clearCart();
       })
       .catch((err) => {
         console.log(err);
       });
-    navigate('/');
   };
 
   return (

@@ -18,6 +18,6 @@ app.post('/api/signup', ctrl.signUp);
 app.post('/api/login', ctrl.logIn);
 
 app.post('/api/cart', ctrl.cartOrder);
-
+app.delete('api/cart', ctrl.removeCart);
 //Listen
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

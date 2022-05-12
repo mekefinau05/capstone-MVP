@@ -80,4 +80,11 @@ module.exports = {
     );
     res.status(200).send(req.body.userName);
   },
+  removeCart: async (req, res) => {
+    await sequelize.query(`
+    DELETE FROM orders 
+    WHERE id=${req.body.id}
+    `);
+    res.status(200).send('Success!');
+  },
 };

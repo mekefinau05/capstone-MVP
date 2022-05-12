@@ -21,6 +21,10 @@ function App() {
     );
   };
 
+  const clearCart = () => {
+    setCart([]);
+  };
+
   return (
     <div className='App'>
       <Nav />
@@ -30,7 +34,11 @@ function App() {
       </header>
       <Items addToCart={addToCart} />
       {cart.length ? (
-        <Cart cart={cart} removeFromCart={removeFromCart} />
+        <Cart
+          cart={cart}
+          removeFromCart={removeFromCart}
+          clearCart={clearCart}
+        />
       ) : null}
       <Footer />
     </div>
