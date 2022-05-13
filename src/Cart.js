@@ -10,7 +10,7 @@ function Cart({ cart, removeFromCart, clearCart }) {
       .post('/api/cart', { cart, userId, userName })
       .then((res) => {
         alert(
-          `${res.data}, thank you for your order! We will call you when it's ready.`
+          `${res.data}, thank you for your order! We will let you when it's ready.`
         );
         clearCart();
       })

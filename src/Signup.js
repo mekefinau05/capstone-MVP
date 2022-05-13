@@ -4,8 +4,10 @@ import { useFormik } from 'formik';
 import axios from 'axios';
 import Nav from './Nav';
 import Footer from './Footer';
+import { useNavigate } from 'react-router-dom';
 
 function Signup() {
+  const navigate = useNavigate();
   const initialValues = {
     name: '',
     username: '',
@@ -18,6 +20,7 @@ function Signup() {
       .post('/api/signup', values)
       .then((res) => {
         console.log(res.data);
+        navigate('/Login');
       })
       .catch((err) => console.log(err.response.data));
   };
