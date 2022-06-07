@@ -1,23 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Nav.css';
 
-function Nav() {
+function NavIn() {
   return (
     <nav className='nav'>
       <Link className='link' to='/'>
         Home
       </Link>{' '}
       |{' '}
-      <Link className='link' to='/login'>
-        Login
+      <Link className='link' to='/cart'>
+        Cart
       </Link>{' '}
       |{' '}
-      <Link className='link' to='/signup'>
-        Signup
+      <Link className='link' to='/logout'>
+        Logout
       </Link>
     </nav>
   );
 }
 
-export default Nav;
+export default NavIn;

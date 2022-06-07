@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Items from './Items';
 import Footer from './Footer';
-import Nav from './Nav';
+import NavIn from './NavIn';
 import Cart from './Cart';
 import Bgchange from './Bgchange';
 
@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className='App'>
-      <Nav />
+      <NavIn />
       <header className='App-header'>
         <h1>Amelia's Sweet Treats</h1>
         <Bgchange />
